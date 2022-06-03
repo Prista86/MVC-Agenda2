@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Insert";
+}
+<h1>@ViewData["Title"]</h1>
+
+<button class="btn btn-primary" id="myBtn">Insert Contact</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Inserimento dati Contatto</h2>
+    </div>
+    <div class="modal-body">
+      Name: <input type="text" id="personName" /><br/>
+      Last Name: <input type="text" id="personLastName" /><br/>
+      Telephone Number: <input type="text" id="personNumber" /><br/>
+      Email: <input type="text" id="personEmail" />      
+    </div>
+    <div class="modal-footer">
+      <h3>
+          <button onclick="insertPerson()" class="btn btn-primary">Salva in rubrica</button>
+      </h3>
+    </div>
+  </div>
+</div>
