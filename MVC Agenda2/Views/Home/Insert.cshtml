@@ -3,7 +3,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<button class="btn btn-primary" id="myBtn">Insert Contact</button>
+@*<button class="btn btn-primary" id="myBtn">Insert Contact</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -25,4 +25,12 @@
       </h3>
     </div>
   </div>
-</div>
+</div>*@
+
+
+Name: <input type="text" id="personName" /><br/>
+      Last Name: <input type="text" id="personLastName" /><br/>
+      Telephone Number: <input type="text" id="personNumber" /><br/>
+      Email: <input type="text" id="personEmail" /> 
+
+      <button onclick="insertPerson()" class="btn btn-primary">Salva in rubrica</button>

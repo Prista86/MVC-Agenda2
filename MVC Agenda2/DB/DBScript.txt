@@ -1,0 +1,18 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Persons](
+	[ID] [uniqueidentifier] NULL,
+	[Nome] [nvarchar](max) NULL,
+	[Cognome] [nvarchar](50) NULL,
+	[[NumeroCellulare] [nvarchar](50) NULL,
+	[IndirizzoEmail] [nvarchar](50) NULL,
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+INSERT [dbo].[Persons] ([ID], [Nome], [Cognome], [NumeroCellulare], [IndirizzoEmail]) VALUES (N'ec4a0fd2-269f-4280-b359-33544e1ab848', N'Luca', N'Rossi', N'1111',N'luca@luca.it')
+GO
+INSERT [dbo].[Persons] ([ID], [Nome], [Cognome], [NumeroCellulare], [IndirizzoEmail]) VALUES (N'4cf2c67f-25d6-406c-a700-92ea796afa57', N'Luke', N'Red', N'2222',N'luke@luke.it')
+GO
+INSERT [dbo].[Persons] ([ID], [Nome], [Cognome], [NumeroCellulare], [IndirizzoEmail]) VALUES (N'5e558b4c-9cce-4265-af2d-fe951d17825d', N'Lucas', N'Rossis', N'3333',N'lucas@lucas.it')
+GO

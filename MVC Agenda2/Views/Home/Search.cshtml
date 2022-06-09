@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Ricerca contatto";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model List<PersonModel>;
+
+<table>
+    <tr>
+        <td>Nome</td>
+        <td>Cognome</td>
+    </tr>
+    @foreach (PersonModel p in Model)
+    {
+    <tr>
+        <td>@p.Nome</td>
+        <td>@p.Cognome</td>
+       @* <td>@p.NumeroCellulare</td>*@
+        <td>@p.IndirizzoEmail</td>
+    </tr>
+    }
+</table>
+
+Ricerca contatto: (non funziona) <input type="text" id="searchtext" /> 
+
+<button onclick="searchPerson()" class="btn btn-primary">Elimina contatto</button>

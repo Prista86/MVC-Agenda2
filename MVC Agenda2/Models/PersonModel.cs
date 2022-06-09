@@ -9,6 +9,9 @@ namespace MVC_Agenda2.Models
     {
         public string Nome { get; set; }
         public string Cognome { get; set; }
-        public string Email { get; set; }
+        public string NumeroCellulare { get; set; }
+        public string IndirizzoEmail { get; set; }
     }
 }
+
+

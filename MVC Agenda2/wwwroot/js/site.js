@@ -3,31 +3,31 @@
 
 // Write your JavaScript code.
 
-// Get the modal
-var modal = document.getElementById("myModal");
+//// Get the modal
+//var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+//// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+//// Get the <span> element that closes the modal
+//var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function () {
-    modal.style.display = "block";
-}
+//// When the user clicks the button, open the modal 
+//btn.onclick = function () {
+//    modal.style.display = "block";
+//}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
+//// When the user clicks on <span> (x), close the modal
+//span.onclick = function () {
+//    modal.style.display = "none";
+//}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+//// When the user clicks anywhere outside of the modal, close it
+//window.onclick = function (event) {
+//    if (event.target == modal) {
+//        modal.style.display = "none";
+//    }
+//}
 
 function insertPerson() {
     var body = {};
@@ -38,6 +38,30 @@ function insertPerson() {
     $.ajax({
         method: "POST",
         url: "/api/Person",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(body),
+        dataType: "json",
+        success: function (data, status) {
+            console.log(body);
+            console.log(data);
+            console.log(status);
+            this.always();
+        },
+        error: function (error, status) {
+            console.log(body);
+            console.log(error);
+            console.log(status);
+            this.always();
+        },
+        always: function () { }
+    });
+};
+
+function searchPerson() {
+    var search = $('#searchtext').val();
+    $.ajax({
+        method: "POST",
+        url: "/api/Search",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(body),
         dataType: "json",

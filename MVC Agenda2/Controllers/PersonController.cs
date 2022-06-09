@@ -27,9 +27,12 @@ namespace MVC_Agenda2.Controllers
             Person person = new Person();
             person.Nome = model.Nome;
             person.Cognome = model.Cognome;
-            person.IndirizzoEmail = model.Email;
+            person.NumeroCellulare = model.NumeroCellulare;
+            person.IndirizzoEmail = model.IndirizzoEmail;
+
             this.repository.InsertPerson(person);
             return Ok();
         }
     }
 }
+

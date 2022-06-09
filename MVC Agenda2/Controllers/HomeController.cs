@@ -28,7 +28,33 @@ namespace MVC_Agenda2.Controllers
         }
         public IActionResult Insert()
         {
+            //Person person = new Person()
+            //{
+            //    Nome = "Insert NomeA",
+            //    Cognome = "Insert CognomeA",
+            //    NumeroCellulare = "NumeroA",
+            //    IndirizzoEmail = "IndirizzoA"
+            //};
+            //this.repository.InsertPerson(person);
+            //return View(new PersonModel()
+            //{
+            //    Nome = person.Nome,
+            //    Cognome = person.Cognome,
+            //    Email = person.IndirizzoEmail
+            //});
             return View();
+        }
+        public IActionResult Search()
+        {
+            List<Person> persons = this.repository.GetPersonWithFilter("luca");
+            List<PersonModel> model = new List<PersonModel>();
+            foreach (Person p in persons)
+                model.Add(new PersonModel()
+                {
+                    Nome = p.Nome,
+                    Cognome = p.Cognome
+                });
+            return View(model);
         }
 
         public IActionResult Agenda()
@@ -40,8 +66,8 @@ namespace MVC_Agenda2.Controllers
                 {
                     Nome = p.Nome,
                     Cognome = p.Cognome,
-                    Email = p.IndirizzoEmail
-                });
+                    IndirizzoEmail = p.IndirizzoEmail                    
+                }); ;
             return View(model);
             
         }

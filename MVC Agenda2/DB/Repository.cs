@@ -25,15 +25,15 @@ namespace MVC_Agenda2.DB
         //    Person result = this.DBContext.Persons.Where(p => p.ID.ToString() == id).FirstOrDefault();
         //    return result;
         //}
-        //public List<Person> GetPersonWithFilter(string filter)
-        //{
-        //    //select * from persons where nome like "%filter%"
-        //    //or cognome like "%filter%"
-        //    List<Person> result = this.DBContext.Persons
-        //        .Where(p => p.Nome.Contains(filter)
-        //        || p.Cognome.Contains(filter)).ToList();
-        //    return result;
-        //}
+        public List<Person> GetPersonWithFilter(string filter)
+        {
+            //select * from persons where nome like "%filter%"
+            //or cognome like "%filter%"
+            List<Person> result = this.DBContext.Persons
+                .Where(p => p.Nome.Contains(filter)
+                || p.Cognome.Contains(filter)).ToList();
+            return result;
+        }
         public void InsertPerson(Person person)
         {
             this.DBContext.Persons.Add(person);
